@@ -1,6 +1,6 @@
 # MXPERT
 
-## MXPERT- 
+## MXPERT- Expert Matching System
 
 ## Problem (open innovation) <br><br>
 
