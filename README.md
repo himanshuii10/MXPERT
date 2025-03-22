@@ -12,3 +12,5 @@ The solution automates expert matching, providing a matching score to assess ali
 
 <b> Objective: </b><br>
 Develop a system to efficiently match experts to interview panels, optimizing selection through automated scoring and AI-driven insights.<br><br>
+
+PS- While creating a new account, password must be of 6 digits atleast.
