@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+  />
+  <title>Home Page</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: left 0.3s ease;
+      z-index: 1000; /* Ensure sidebar is above other content */
+    }
+    .sidebar.open {
+      left: 0;
+    }
+    .sidebar a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+    }
+    .menu-icon, .toggle-button {
+      cursor: pointer;
+    }
+    .toggle-button {
+      margin-right: 10px; /* Space between button and logo */
+    }
+  </style>
+</head>
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-[#f8fafb] group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8eef3] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#0e161b]">
+          <!-- Toggle Button -->
+          <!-- <div class="toggle-button" onclick="toggleSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16m-16 6h16"></path>
+            </svg>
+          </div> -->
+          <!-- Menu Icon Button -->
+          <div class="menu-icon" onclick="toggleSidebar()">
+            <img src="line.png" alt="Menu Icon" />
+          </div>
+          <div class="flex items-center">
+            <img src="MXPERT logo.png" alt="Logo" class="w-16 h-auto"/> <!-- Adjust width as needed -->
+          </div>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-4">
+            <a class="bg-gradient-to-r from-teal-500 to-green-500 text-white text-sm font-bold leading-normal py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-teal-600 transition-all duration-300 ease-in-out" href="interview_schedule.html">Interview Schedule</a>
+            <a class="bg-gradient-to-r from-teal-500 to-green-500 text-white text-sm font-bold leading-normal py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-teal-600 transition-all duration-300 ease-in-out" href="sponsorship.html">Sponsorship</a>
+            <a class="bg-gradient-to-r from-teal-500 to-green-500 text-white text-sm font-bold leading-normal py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-teal-600 transition-all duration-300 ease-in-out" href="score_card.html">Score Card</a>
+          </div>
+          <div class="flex gap-2">
+            <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e8eef3] text-[#0e161b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#0e161b]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </div>
+            </button>
+            <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e8eef3] text-[#0e161b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#0e161b]" data-icon="Bell" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/98950bcf-644a-4bb2-ad33-2ba97152238a.png");'></div>
+        </div>
+      </header>
+      
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <a href="candidate_list.html">Candidate List</a>
+        <a href="expert_list.html">Expert List</a>
+        <a href="interview_board_subject.html">Interview Board Subject</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+      </div>
+
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <div class="@container">
+            <div class="@[480px]:p-4">
+              <div
+                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-end px-4 pb-10 @[480px]:px-10"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("Untitled-design.png"); background-size: cover;'
+              >
+                <div class="flex flex-col gap-2 text-left">
+                  <h1
+                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                  >
+                    Introducing MXPERT
+                  </h1>
+                  <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                    Effortlessly match and score experts based on their expertise and the interview subject to ensure the best fit for your selection board. Streamline the expert selection process with precise relevancy scoring.
+                  </h2>
+                </div>
+                <a href="5.html">
+                <div class="flex-wrap gap-3 flex items-center">
+                  <button
+class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-gradient-to-r from-teal-500 to-green-500 text-white text-2xl font-bold leading-normal tracking-wide shadow-md hover:shadow-lg hover:from-green-500 hover:to-teal-500 transition-all duration-300 ease-in-out"
+>
+<span class="truncate">Find Expert</span>
+</button>
+                </div></a>
+              </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-10 px-4 py-10 @container">
+          <div class="flex flex-col gap-4">
+            <h1
+              class="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+            >
+              How it works
+            </h1>
+            <p class="text-[#0e161b] text-base font-normal leading-normal max-w-[720px]">
+              Our platform simplifies the expert selection process by automating the matching and scoring of experts based on their relevance to interview subjects and candidate profiles. Here's how it works:
+            </p>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
+            <div class="flex flex-col gap-3 pb-3">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl">
+                <img src="img.avif" alt="Desktop Icon" class="w-full h-auto rounded-xl" />
+              </div>
+              <div>
+                <p class="text-[#0e161b] text-base font-medium leading-normal">Expert-Candidate Matching</p>
+                <p class="text-[#507a95] text-sm font-normal leading-normal">Automatically matches experts with candidates based on domain expertise and interview subject.
+
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 pb-3">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/stability/c32f5862-e1f9-4d25-8540-e4ef6490a273.png");'
+              ></div>
+              <div>
+                <p class="text-[#0e161b] text-base font-medium leading-normal">Relevancy Scoring</p>
+                <p class="text-[#507a95] text-sm font-normal leading-normal">
+                  Provides a detailed relevancy score for each expert, indicating their suitability for specific interview boards.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 pb-3">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/stability/29cd9d11-4630-4475-9596-0b54f203c983.png");'
+              ></div>
+              <div>
+                <p class="text-[#0e161b] text-base font-medium leading-normal">Search and Filter</p>
+                <p class="text-[#507a95] text-sm font-normal leading-normal">
+                  Allows users to search and filter experts based on various criteria, such as domain expertise and previous experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-[#507a95] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">© 2025 MXPERT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  
+    // Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+      const sidebar = document.getElementById('sidebar');
+      const toggleButton = document.querySelector('.menu-icon'); // Toggle button is the menu icon
+      
+      // Check if the click is outside the sidebar and the menu icon
+      if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  
+    // Prevent sidebar closing when clicking inside the sidebar
+    document.getElementById('sidebar').addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  </script>
+</body>
+</html>
