@@ -1,1 +1,171 @@
-project page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" />
+    <title>Score Table</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+    
+        body {
+            font-family: 'Manrope', 'Noto Sans', sans-serif;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            margin: 0;
+            padding-top: 60px; /* Space for the fixed header */
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.99);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e4e8;
+        }
+        th {
+            background-color: #e9eff1;
+            font-weight: 600;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(90deg, #4caf50, #8bc34a);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+            padding-left: 75px;
+            padding-right: 75px;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #8bc34a, #4caf50);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0e161b;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background-color: rgba(255, 255, 255, 0.99);
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 20px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('camo.jpg'); /* Replace with your image */
+    /* background-size: cover; */
+    filter: blur(5px); /*Apply blur effect */
+    opacity: 0.9; /* Adjust opacity for the fade effect */
+    z-index: -1; /* Place the background behind other content */
+}
+    </style>
+</head>
+<body>
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8eef3] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#0e161b]">
+            <div class="flex items-center">
+                <img src="MXPERT logo.png" alt="Logo" class="w-16 h-auto"/> <!-- Adjust width as needed -->
+            </div>
+            <!-- <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">TalentMatch</h2> -->
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+                <a class="text-[#0e161b] text-sm font-medium leading-normal" href="4.html">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="background"></div>
+        <h1 class="text-2xl font-bold mb-6">Matching and Relevancy Score</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th style="border-radius: 20px 0 0 0;">Candidate Name</th>
+                    <th>Expert Name</th>
+                    <th>Subject</th>
+                    <th>Area of Expertise</th>
+                    <th>Matching Score</th>
+                    <th style="border-radius: 0 20px 0 0;">Relevancy Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Priya Sharma</td>
+                    <td>Dr. Rajiv Verma</td>
+                    <td>Data Science</td>
+                    <td>Machine Learning</td>
+                    <td>85</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Rohit Kumar</td>
+                    <td>Dr. Anjali Patel</td>
+                    <td>Software Engineering</td>
+                    <td>Backend Development</td>
+                    <td>78</td>
+                    <td>82</td>
+                </tr>
+                <tr>
+                    <td>Anita Singh</td>
+                    <td>Dr. Neeraj Desai</td>
+                    <td>Cybersecurity</td>
+                    <td>Network Security</td>
+                    <td>92</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>Vikram Chatterjee</td>
+                    <td>Dr. Meera Iyer</td>
+                    <td>Cloud Computing</td>
+                    <td>Cloud Infrastructure</td>
+                    <td>80</td>
+                    <td>85</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <button class="button">Export Results</button>
+        </div>
+        
+    </div>
+</body>
+</html>
+
